@@ -1,0 +1,19 @@
+
+
+<h1>all products </h1>
+{% extends 'base_visitor.html' %}
+{% block content %}
+All products<br/>
+    {% if all_products %}
+        <table class="table table-bordered">
+            {% for things in all_products %}
+                <tr>
+                    <td><a href="{% url 'product' things.id %}">{{things.id }}</a></td>
+                    <td><center>{{things.name }}</center></td>
+                    <td><center>{{things.description }}</center></td>
+                    <td><center>{{things.price }}</center></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

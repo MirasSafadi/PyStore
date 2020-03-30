@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Welcome to SignIN</h2>
+  <form action ="{% url 'signin' %}" class="was-validated" method = "POST">{% csrf_token %}
+
+
+    <div class="form-group">
+      <label for="mail">mail:</label>
+      <input type="text" class="form-control" id="mail" placeholder="Enter mail" name="mail" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+   <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember" required> Remeber me!
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Remember me!.</div>
+      </label>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+{% endblock content %}

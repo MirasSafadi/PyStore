@@ -1,0 +1,20 @@
+{% if username == "fouad" %}
+    <header >
+    <a href="{% url 'home' %}">Home</a> | <a href="{% url 'signout' %}">sign-out</a>  | <a href="{% url 'category' %}">Category</a> | <a href="{% url 'all_products' %}">All Products</a>
+    </header>
+    <header>
+    <center>    Welcome {{username}} </center>
+    </header>
+    <header dir="rtl" >
+    <dir="rtl"/><a href="{% url 'cart' %}">Cart</a> 
+    </header>
+{% else %}
+    <header >
+    <a href="{% url 'home' %}">Home</a> | <a href="{% url 'signin' %}">sign-in</a>  | <a href="{% url 'register' %}">Sign-Up</a> | <a href="{% url 'all_products' %}">All Products</a>
+    </header>
+{% endif %}
+
+{% block content %}
+{% endblock content %}
+
+

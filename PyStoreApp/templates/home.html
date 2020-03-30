@@ -1,0 +1,21 @@
+{% extends 'base_visitor.html' %}
+hi 
+{% block content %}
+<h1>Home  page</h1>
+ hi
+
+ {% if user.privilege == "1" %}
+    welcome {{ user.full_name }}
+{% else %}
+    Welcome
+{% endif %} 
+
+
+
+{% endblock content %}
+
+{% block hi %}
+
+hello2
+
+{% endblock hi %}
